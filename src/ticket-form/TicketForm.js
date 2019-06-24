@@ -29,7 +29,10 @@ class TicketForm extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault();
         console.log(TICKETS_URL);
-        axios.post(TICKETS_URL, this.state);
+        axios.post(TICKETS_URL, {
+            projectId: 1,
+            ...this.state
+        });
         //ToDo: error handling
     };
 
